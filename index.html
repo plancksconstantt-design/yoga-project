@@ -28,13 +28,10 @@
 
   body {
     font-family: 'Playfair Display', serif;
-    background-color: #e8e4df;
+    background-color: var(--off-white);
     color: var(--ink);
     overflow-x: hidden;
     position: relative;
-    max-width: 1280px;
-    margin: 0 auto;
-    box-shadow: 0 0 60px rgba(0,0,0,0.15);
   }
 
   /* Зернистая текстура бумаги на всём сайте */
@@ -59,10 +56,8 @@
   header {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 100%;
-    max-width: 1280px;
     padding: 20px 60px;
     display: flex;
     justify-content: space-between;
@@ -128,7 +123,7 @@
 
   .card {
     width: 100%;
-    max-width: 1160px;
+    max-width: 1200px;
     border: 1px solid var(--line);
     background: var(--off-white);
     position: relative;
@@ -151,7 +146,7 @@
 
   .card-title h1 {
     font-family: 'Caveat', cursive;
-    font-size: clamp(70px, 10vw, 160px);
+    font-size: clamp(70px, 12vw, 180px);
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -2px;
@@ -238,7 +233,7 @@
     left: 50%;
     transform: translate(-50%, -50%) rotate(-4deg);
     font-family: 'Caveat', cursive;
-    font-size: clamp(60px, 8vw, 140px);
+    font-size: clamp(60px, 10vw, 160px);
     color: var(--red);
     text-align: center;
     line-height: 0.95;
@@ -260,7 +255,7 @@
   /* ===== ABOUT SECTION ===== */
   .about {
     padding: 120px 60px;
-    max-width: 1280px;
+    max-width: 1400px;
     margin: 0 auto;
   }
 
@@ -290,7 +285,7 @@
 
   .about h2 {
     font-family: 'Caveat', cursive;
-    font-size: clamp(50px, 5vw, 80px);
+    font-size: clamp(50px, 6vw, 90px);
     font-weight: 500;
     line-height: 1;
     margin-bottom: 40px;
@@ -344,7 +339,7 @@
   }
 
   .classes-inner {
-    max-width: 1280px;
+    max-width: 1400px;
     margin: 0 auto;
   }
 
@@ -355,7 +350,7 @@
 
   .classes-header h2 {
     font-family: 'Caveat', cursive;
-    font-size: clamp(60px, 7vw, 100px);
+    font-size: clamp(60px, 8vw, 120px);
     font-weight: 500;
     margin-top: 20px;
   }
@@ -418,7 +413,7 @@
   /* ===== TEACHERS ===== */
   .teachers {
     padding: 120px 60px;
-    max-width: 1280px;
+    max-width: 1400px;
     margin: 0 auto;
   }
 
@@ -491,7 +486,7 @@
 
   .quote-section blockquote {
     font-family: 'Caveat', cursive;
-    font-size: clamp(40px, 5vw, 80px);
+    font-size: clamp(40px, 6vw, 90px);
     font-weight: 500;
     line-height: 1.1;
     max-width: 900px;
@@ -511,14 +506,14 @@
   /* ===== CONTACT / CTA ===== */
   .contact {
     padding: 120px 60px;
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
   }
 
   .contact h2 {
     font-family: 'Caveat', cursive;
-    font-size: clamp(60px, 8vw, 120px);
+    font-size: clamp(60px, 10vw, 140px);
     font-weight: 500;
     line-height: 0.95;
     margin-bottom: 40px;
@@ -546,7 +541,7 @@
 
   .cta-section h2 {
     font-family: 'Caveat', cursive;
-    font-size: clamp(60px, 8vw, 120px);
+    font-size: clamp(60px, 10vw, 140px);
     font-weight: 500;
     line-height: 0.95;
     margin-bottom: 40px;
@@ -634,16 +629,6 @@
   }
 
   /* ===== RESPONSIVE ===== */
-  @media (max-width: 1280px) {
-    body {
-      max-width: 100%;
-    }
-    
-    header {
-      max-width: 100%;
-    }
-  }
-
   @media (max-width: 900px) {
     header { padding: 15px 25px; }
     nav ul { gap: 20px; }
@@ -776,7 +761,7 @@
 <!-- TEACHERS -->
 <section class="teachers" id="teachers">
   <div class="section-label reveal">Our Teachers</div>
-  <h2 class="reveal" style="font-family: 'Caveat', cursive; font-size: clamp(50px, 6vw, 90px); font-weight: 500;">Guided by <span style="color: var(--red);">masters</span></h2>
+  <h2 class="reveal" style="font-family: 'Caveat', cursive; font-size: clamp(50px, 7vw, 100px); font-weight: 500;">Guided by <span style="color: var(--red);">masters</span></h2>
   <div class="teachers-grid">
     <div class="teacher reveal">
       <div class="teacher-photo">
