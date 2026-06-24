@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awesome Ways Yoga — Aesthetic Grace in Every Breath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --off-white: #f4f1ec;
+    --paper: #ebe7e0;
+    --ink: #1a1a1a;
+    --red: #e63946;
+    --line: #2a2a2a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Playfair Display', serif;
+    background-color: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Зернистая текстура бумаги на всём сайте */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  .script {
+    font-family: 'Caveat', cursive;
+  }
+
+  /* ===== HEADER / NAV ===== */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(244, 241, 236, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .logo {
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+  }
+
+  nav a {
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s;
+  }
+
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--red);
+    transition: width 0.4s ease;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  nav a:hover {
+    color: var(--red);
+  }
+
+  /* ===== HERO — типографическая карточка ===== */
+  .hero {
+    min-height: 100vh;
+    padding: 140px 60px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid var(--line);
+    background: var(--off-white);
+    position: relative;
+  }
+
+  .card-top {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--line);
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  }
+
+  .card-title {
+    padding: 80px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .card-title h1 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(70px, 12vw, 180px);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .card-title h1::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 5%;
+    width: 90%;
+    height: 2px;
+    background: var(--ink);
+    transform: rotate(-1deg);
+  }
+
+  .card-divider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .card-divider div {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .card-divider div:first-child {
+    border-right: 1px solid var(--line);
+  }
+
+  .card-divider p {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+
+  .card-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* ===== IMAGE SECTION — фото с красным скриптом ===== */
+  .image-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1);
+    opacity: 0.9;
+  }
+
+  .image-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+    font-family: 'Caveat', cursive;
+    font-size: clamp(60px, 10vw, 160px);
+    color: var(--red);
+    text-align: center;
+    line-height: 0.95;
+    pointer-events: none;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+    white-space: nowrap;
+  }
+
+  .image-brand {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  .about {
+    padding: 120px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about h2 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(50px, 6vw, 90px);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+
+  .about h2 span {
+    color: var(--red);
+  }
+
+  .about p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .about-image {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: transform 1.2s ease;
+  }
+
+  .about-image:hover img {
+    transform: scale(1.05);
+  }
+
+  .about-image .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    color: var(--red);
+  }
+
+  /* ===== CLASSES / SCHEDULE ===== */
+  .classes {
+    padding: 120px 60px;
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .classes-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .classes-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .classes-header h2 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(60px, 8vw, 120px);
+    font-weight: 500;
+    margin-top: 20px;
+  }
+
+  .class-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+  }
+
+  .class-item {
+    padding: 50px 30px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+    transition: background 0.4s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .class-item:nth-child(3n) {
+    border-right: none;
+  }
+
+  .class-item:nth-last-child(-n+3) {
+    border-bottom: none;
+  }
+
+  .class-item:hover {
+    background: var(--off-white);
+  }
+
+  .class-item:hover .class-name {
+    color: var(--red);
+  }
+
+  .class-time {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+
+  .class-name {
+    font-family: 'Caveat', cursive;
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+  }
+
+  .class-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    letter-spacing: 1px;
+  }
+
+  /* ===== TEACHERS ===== */
+  .teachers {
+    padding: 120px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+  }
+
+  .teacher {
+    text-align: center;
+  }
+
+  .teacher-photo {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .teacher-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: all 0.6s;
+  }
+
+  .teacher:hover .teacher-photo img {
+    filter: grayscale(0%);
+  }
+
+  .teacher-name {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .teacher-role {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* ===== QUOTE SECTION ===== */
+  .quote-section {
+    padding: 140px 60px;
+    text-align: center;
+    background: var(--ink);
+    color: var(--off-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-section::before {
+    content: '"';
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Caveat', cursive;
+    font-size: 300px;
+    color: var(--red);
+    opacity: 0.3;
+    line-height: 1;
+  }
+
+  .quote-section blockquote {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(40px, 6vw, 90px);
+    font-weight: 500;
+    line-height: 1.1;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .quote-section cite {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-style: normal;
+    opacity: 0.7;
+  }
+
+  /* ===== CONTACT / CTA ===== */
+  .contact {
+    padding: 120px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact h2 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(60px, 10vw, 140px);
+    font-weight: 500;
+    line-height: 0.95;
+    margin-bottom: 40px;
+  }
+
+  .contact h2 span {
+    color: var(--red);
+  }
+
+  .contact p {
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    letter-spacing: 1px;
+  }
+
+  /* ===== CTA SECTION (для других страниц) ===== */
+  .cta-section {
+    padding: 120px 60px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cta-section h2 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(60px, 10vw, 140px);
+    font-weight: 500;
+    line-height: 0.95;
+    margin-bottom: 40px;
+  }
+
+  .cta-section h2 span {
+    color: var(--red);
+  }
+
+  .cta-section p {
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    letter-spacing: 1px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 20px 50px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    transition: left 0.4s;
+    z-index: -1;
+  }
+
+  .btn:hover {
+    color: #fff;
+    border-color: var(--red);
+  }
+
+  .btn:hover::before {
+    left: 0;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  footer .footer-logo {
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    text-transform: none;
+    letter-spacing: 1px;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    header { padding: 15px 25px; }
+    nav ul { gap: 20px; }
+    nav a { font-size: 10px; letter-spacing: 2px; }
+    .hero { padding: 100px 25px 40px; }
+    .card-title { padding: 50px 20px; }
+    .card-divider { grid-template-columns: 1fr; }
+    .card-divider div:first-child { border-right: none; border-bottom: 1px solid var(--line); }
+    .card-divider div { padding: 25px; }
+    .image-section { height: 70vh; }
+    .image-brand { right: 25px; bottom: 25px; }
+    .about, .classes, .teachers, .contact, .cta-section { padding: 80px 25px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .class-list { grid-template-columns: 1fr; }
+    .class-item { border-right: none !important; }
+    .class-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
+    .class-item:last-child { border-bottom: none; }
+    .teachers-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 15px; text-align: center; padding: 30px 25px; }
+    .quote-section { padding: 100px 25px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Awesome Ways</div>
+  <nav>
+    <ul>
+      <li><a href="#about">О нас</a></li>
+      <li><a href="#classes">Занятия</a></li>
+      <li><a href="#teachers">Преподаватели</a></li>
+      <li><a href="#contact">Контакт</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO: типографическая карточка -->
+<section class="hero">
+  <div class="card reveal">
+    <div class="card-top">Proudly Present</div>
+    <div class="card-title">
+      <h1>Awesome Ways Yoga</h1>
+    </div>
+    <div class="card-divider">
+      <div>
+        <p>Aesthetic Grace<br>in Every Breath</p>
+      </div>
+      <div>
+        <p>Handcrafted Practice<br>by Sarid Ezra</p>
+      </div>
+    </div>
+    <div class="card-footer">Made with Love. ©2026</div>
+  </div>
+  <div class="scroll-hint">Scroll ↓</div>
+</section>
+
+<!-- IMAGE SECTION: фото с красным скриптом -->
+<section class="image-section">
+  <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&q=80" alt="Yoga practice">
+  <div class="image-overlay-text">Take your<br>breath away..</div>
+  <div class="image-brand">Awesome Ways.</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label reveal">About the Studio</div>
+  <div class="about-grid">
+    <div class="reveal">
+      <h2>Find your <span>inner</span> stillness</h2>
+      <p>Наша студия — это пространство, где древние традиции йоги встречаются с современной эстетикой. Мы верим, что каждая практика — это искусство.</p>
+      <p>Здесь нет спешки. Только дыхание, движение и тишина, которая говорит громче слов.</p>
+    </div>
+    <div class="about-image reveal">
+      <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=80" alt="Yoga pose">
+      <div class="caption">breathe deeply.</div>
+    </div>
+  </div>
+  <div class="about-cta reveal" style="margin-top: 50px;">
+    <a href="about-page.html" class="btn">Подробнее о студии</a>
+  </div>
+</section>
+
+<!-- CLASSES -->
+<section class="classes" id="classes">
+  <div class="classes-inner">
+    <div class="classes-header reveal">
+      <div class="section-label" style="justify-content: center;">Our Classes</div>
+      <h2>Weekly Schedule</h2>
+    </div>
+    <div class="class-list reveal">
+      <div class="class-item">
+        <div class="class-time">Mon · 07:00</div>
+        <div class="class-name">Sunrise Flow</div>
+        <div class="class-desc">Мягкое пробуждение тела через плавные последовательности</div>
+      </div>
+      <div class="class-item">
+        <div class="class-time">Tue · 18:30</div>
+        <div class="class-name">Vinyasa</div>
+        <div class="class-desc">Динамичная практика, связывающая дыхание и движение</div>
+      </div>
+      <div class="class-item">
+        <div class="class-time">Wed · 20:00</div>
+        <div class="class-name">Yin Yoga</div>
+        <div class="class-desc">Глубокое расслабление и работа с соединительными тканями</div>
+      </div>
+      <div class="class-item">
+        <div class="class-time">Thu · 07:00</div>
+        <div class="class-name">Ashtanga</div>
+        <div class="class-desc">Классическая система с фиксированной последовательностью</div>
+      </div>
+      <div class="class-item">
+        <div class="class-time">Fri · 19:00</div>
+        <div class="class-name">Restorative</div>
+        <div class="class-desc">Восстановительная практика с использованием опор</div>
+      </div>
+      <div class="class-item">
+        <div class="class-time">Sat · 09:00</div>
+        <div class="class-name">Meditation</div>
+        <div class="class-desc">Утренняя медитация и дыхательные практики пранаямы</div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 60px;" class="reveal">
+      <a href="schedule.html" class="btn">Полное расписание</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section class="teachers" id="teachers">
+  <div class="section-label reveal">Our Teachers</div>
+  <h2 class="reveal" style="font-family: 'Caveat', cursive; font-size: clamp(50px, 7vw, 100px); font-weight: 500;">Guided by <span style="color: var(--red);">masters</span></h2>
+  <div class="teachers-grid">
+    <div class="teacher reveal">
+      <div class="teacher-photo">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" alt="Teacher">
+      </div>
+      <div class="teacher-name">Sarid Ezra</div>
+      <div class="teacher-role">Founder · Vinyasa</div>
+    </div>
+    <div class="teacher reveal">
+      <div class="teacher-photo">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Teacher">
+      </div>
+      <div class="teacher-name">Anya Volkov</div>
+      <div class="teacher-role">Yin · Restorative</div>
+    </div>
+    <div class="teacher reveal">
+      <div class="teacher-photo">
+        <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80" alt="Teacher">
+      </div>
+      <div class="teacher-name">Leo Marin</div>
+      <div class="teacher-role">Ashtanga · Meditation</div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 80px;" class="reveal">
+    <a href="teachers.html" class="btn">Познакомиться с командой</a>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <blockquote class="reveal">The body benefits from movement,<br>the mind benefits from stillness.</blockquote>
+  <cite class="reveal">— Ancient Wisdom</cite>
+</section>
+
+<!-- CONTACT / CTA -->
+<section class="contact" id="contact">
+  <h2 class="reveal">Begin your <span>journey</span></h2>
+  <p class="reveal">Приходите на пробное занятие и почувствуйте атмосферу Awesome Ways. Первое занятие — бесплатно. Мы ждём вас.</p>
+  <a href="booking.html" class="btn reveal">Book Your First Class</a>
+</section>
+
+<footer>
+  <div class="footer-logo">Awesome Ways.</div>
+  <div>Made with Love. ©2026</div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Parallax для image-section
+  const imageSection = document.querySelector('.image-section');
+  const overlayText = document.querySelector('.image-overlay-text');
+
+  window.addEventListener('scroll', () => {
+    if (!imageSection) return;
+    const rect = imageSection.getBoundingClientRect();
+    const scrolled = window.innerHeight - rect.top;
+    if (scrolled > 0 && scrolled < window.innerHeight + rect.height) {
+      const progress = scrolled / (window.innerHeight + rect.height);
+      overlayText.style.transform = `translate(-50%, -50%) rotate(-4deg) translateY(${progress * 40}px)`;
+    }
+  });
+
+  // Плавное появление карточки при загрузке
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelector('.card').classList.add('visible');
+    }, 200);
+  });
+</script>
+
+</body>
+</html>
