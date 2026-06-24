@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awesome Ways — Behance Cover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --off-white: #f4f1ec;
+    --paper: #ebe7e0;
+    --ink: #1a1a1a;
+    --red: #e63946;
+    --line: #2a2a2a;
+    --gray: #8a8a8a;
+    --light-gray: #d4d0c8;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: #c8c3ba;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+  }
+
+  /* Контейнер обложки — 1400×1080 для Behance */
+  .cover {
+    width: 1400px;
+    height: 1080px;
+    background-color: var(--paper);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.35);
+    flex-shrink: 0;
+  }
+
+  /* Зернистая текстура */
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* ===== ВЕРХНЯЯ ПАНЕЛЬ ===== */
+  .top-bar {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    right: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+  }
+
+  .brand-tag {
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .case-info {
+    display: flex;
+    gap: 50px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .case-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .case-info-label {
+    color: var(--gray);
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .case-info-value {
+    font-weight: 500;
+    font-size: 11px;
+  }
+
+  /* ===== ОСНОВНАЯ ЗОНА ===== */
+  .main-content {
+    position: absolute;
+    top: 180px;
+    left: 80px;
+    right: 80px;
+    bottom: 180px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    z-index: 5;
+  }
+
+  /* ===== ЛЕВАЯ ЧАСТЬ — ТЕКСТ ===== */
+  .left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+  }
+
+  .main-title {
+    font-family: 'Caveat', cursive;
+    font-size: 140px;
+    font-weight: 500;
+    line-height: 0.9;
+    color: var(--ink);
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+  }
+
+  .main-title .word-1 {
+    display: block;
+  }
+
+  .main-title .word-2 {
+    display: block;
+    color: var(--red);
+    margin-left: 30px;
+  }
+
+  .subtitle-line {
+    width: 80px;
+    height: 2px;
+    background: var(--ink);
+    margin: 30px 0;
+  }
+
+  .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .tag {
+    padding: 10px 22px;
+    border: 1px solid var(--line);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .tag.accent {
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red);
+  }
+
+  /* ===== ПРАВАЯ ЧАСТЬ — НОУТБУК ===== */
+  .right-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .laptop {
+    width: 100%;
+    max-width: 720px;
+    position: relative;
+  }
+
+  .laptop-screen {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: #1a1a1a;
+    border-radius: 14px 14px 4px 4px;
+    padding: 16px 16px 20px 16px;
+    position: relative;
+    box-shadow: 
+      0 0 0 2px #0a0a0a,
+      0 40px 80px rgba(0,0,0,0.3),
+      inset 0 0 0 1px rgba(255,255,255,0.05);
+  }
+
+  .laptop-camera {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 7px;
+    background: #0a0a0a;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  .laptop-camera::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.5px;
+    height: 2.5px;
+    background: #2a2a2a;
+    border-radius: 50%;
+  }
+
+  .screen-content {
+    width: 100%;
+    height: 100%;
+    background: var(--paper);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Зернистость внутри экрана */
+  .screen-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* Браузер бар */
+  .browser-bar {
+    height: 24px;
+    background: #e8e4df;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 6px;
+    z-index: 4;
+    flex-shrink: 0;
+  }
+
+  .browser-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+
+  .browser-dot.red { background: #ff5f56; }
+  .browser-dot.yellow { background: #ffbd2e; }
+  .browser-dot.green { background: #27c93f; }
+
+  .browser-url {
+    margin-left: 18px;
+    flex: 1;
+    height: 14px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid var(--light-gray);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 8px;
+    color: var(--gray);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+  }
+
+  /* Миниатюра hero-карточки */
+  .mini-hero {
+    flex: 1;
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+  }
+
+  .mini-card {
+    width: 90%;
+    border: 1px solid var(--line);
+    background: var(--off-white);
+  }
+
+  .mini-card-top {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--line);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .mini-card-title {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mini-card-title h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -1px;
+    color: var(--ink);
+    position: relative;
+    display: inline-block;
+  }
+
+  .mini-card-title h1::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 5%;
+    width: 90%;
+    height: 1.5px;
+    background: var(--ink);
+    transform: rotate(-1deg);
+  }
+
+  .mini-card-divider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mini-card-divider div {
+    padding: 18px;
+    text-align: center;
+  }
+
+  .mini-card-divider div:first-child {
+    border-right: 1px solid var(--line);
+  }
+
+  .mini-card-divider p {
+    font-size: 7.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  .mini-card-footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 7.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  /* База ноутбука */
+  .laptop-base {
+    width: 110%;
+    height: 16px;
+    background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+    position: relative;
+    margin-left: -5%;
+    box-shadow: 
+      0 2px 0 #0a0a0a,
+      0 12px 40px rgba(0,0,0,0.25);
+  }
+
+  .laptop-base::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 6px;
+    background: #0a0a0a;
+    border-radius: 0 0 8px 8px;
+  }
+
+  /* ===== НИЖНЯЯ ПАНЕЛЬ ===== */
+  .bottom-bar {
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+    right: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 10;
+    border-top: 1px solid var(--line);
+    padding-top: 25px;
+  }
+
+  .bottom-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .bottom-title {
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .bottom-subtitle {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .bottom-right {
+    display: flex;
+    gap: 60px;
+    align-items: flex-end;
+  }
+
+  .bottom-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .bottom-stat-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .bottom-stat-value {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: var(--red);
+    line-height: 1;
+    font-weight: 500;
+  }
+
+  /* ===== ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ ===== */
+  .deco-number {
+    position: absolute;
+    top: 140px;
+    right: 80px;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray);
+    z-index: 2;
+  }
+
+  .deco-year {
+    position: absolute;
+    bottom: 140px;
+    left: 80px;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray);
+    z-index: 2;
+  }
+
+  /* Красная плашка */
+  .project-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    background: var(--red);
+    color: #fff;
+    padding: 14px 30px;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    z-index: 3;
+    box-shadow: 0 10px 30px rgba(230, 57, 70, 0.3);
+    white-space: nowrap;
+  }
+
+  /* Тонкая красная линия */
+  .deco-line {
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    width: 40px;
+    height: 2px;
+    background: var(--red);
+    z-index: 2;
+    transform: translateY(-50%);
+  }
+
+  /* Номер проекта */
+  .project-number {
+    position: absolute;
+    bottom: 80px;
+    right: 80px;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--red);
+    z-index: 2;
+    transform: rotate(-2deg);
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <!-- Верхняя панель -->
+  <div class="top-bar">
+    <div class="brand-tag">Awesome Ways</div>
+    <div class="case-info">
+      <div class="case-info-item">
+        <span class="case-info-label">Role</span>
+        <span class="case-info-value">UX / UI Design</span>
+      </div>
+      <div class="case-info-item">
+        <span class="case-info-label">Type</span>
+        <span class="case-info-value">Website</span>
+      </div>
+      <div class="case-info-item">
+        <span class="case-info-label">Year</span>
+        <span class="case-info-value">2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Номер проекта -->
+  <div class="deco-number">N° 001 / 2026</div>
+
+  <!-- Год -->
+  <div class="deco-year">Est. 2026</div>
+
+  <!-- Красная линия слева -->
+  <div class="deco-line"></div>
+
+  <!-- Основная зона -->
+  <div class="main-content">
+    <!-- Левая часть — текст -->
+    <div class="left-content">
+      <h1 class="main-title">
+        <span class="word-1">Awesome</span>
+        <span class="word-2">Ways</span>
+      </h1>
+      <div class="subtitle-line"></div>
+      <p class="subtitle">
+        Aesthetic grace in every breath. Digital experience for a modern yoga studio blending ancient tradition with contemporary design.
+      </p>
+      <div class="tags">
+        <div class="tag accent">Website Design</div>
+        <div class="tag">Branding</div>
+        <div class="tag">UX/UI</div>
+        <div class="tag">Editorial</div>
+      </div>
+    </div>
+
+    <!-- Правая часть — ноутбук -->
+    <div class="right-content">
+      <div class="laptop">
+        <div class="laptop-screen">
+          <div class="laptop-camera"></div>
+          
+          <div class="screen-content">
+            <!-- Браузер бар -->
+            <div class="browser-bar">
+              <div class="browser-dot red"></div>
+              <div class="browser-dot yellow"></div>
+              <div class="browser-dot green"></div>
+              <div class="browser-url">awesomeways.yoga</div>
+            </div>
+
+            <!-- Контент сайта -->
+            <div class="mini-hero">
+              <div class="mini-card">
+                <div class="mini-card-top">Proudly Present</div>
+                <div class="mini-card-title">
+                  <h1>Awesome Ways Yoga</h1>
+                </div>
+                <div class="mini-card-divider">
+                  <div>
+                    <p>Aesthetic Grace<br>in Every Breath</p>
+                  </div>
+                  <div>
+                    <p>Handcrafted Practice<br>by Sarid Ezra</p>
+                  </div>
+                </div>
+                <div class="mini-card-footer">Made with Love. ©2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="laptop-base"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Красная плашка по центру -->
+  <div class="project-label">Live Project · 2026</div>
+
+  <!-- Номер проекта -->
+  <!-- <div class="project-number">— made with love.</div> -->
+
+  <!-- Нижняя панель -->
+  <div class="bottom-bar">
+    <div class="bottom-left">
+      <div class="bottom-title">Yoga Studio Website</div>
+      <div class="bottom-subtitle">Sarid Ezra · Founder & Creative Director</div>
+    </div>
+    <div class="bottom-right">
+      <div class="bottom-stat">
+        <span class="bottom-stat-label">Pages</span>
+        <span class="bottom-stat-value">05</span>
+      </div>
+      <div class="bottom-stat">
+        <span class="bottom-stat-label">Weeks</span>
+        <span class="bottom-stat-value">06</span>
+      </div>
+      <div class="bottom-stat">
+        <span class="bottom-stat-label">Screens</span>
+        <span class="bottom-stat-value">15</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
