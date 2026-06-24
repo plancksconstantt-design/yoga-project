@@ -28,13 +28,10 @@
 
   body {
     font-family: 'Playfair Display', serif;
-    background-color: #e8e4df;
+    background-color: var(--off-white);
     color: var(--ink);
     overflow-x: hidden;
     position: relative;
-    max-width: 1280px;
-    margin: 0 auto;
-    box-shadow: 0 0 60px rgba(0,0,0,0.15);
   }
 
   body::before {
@@ -58,10 +55,8 @@
   header {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 100%;
-    max-width: 1280px;
     padding: 20px 60px;
     display: flex;
     justify-content: space-between;
@@ -159,7 +154,7 @@
 
   .card-title h1 {
     font-family: 'Caveat', cursive;
-    font-size: clamp(60px, 8vw, 120px);
+    font-size: clamp(60px, 10vw, 140px);
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -2px;
@@ -198,7 +193,7 @@
   /* ===== CONTENT SECTIONS ===== */
   .content-section {
     padding: 100px 60px;
-    max-width: 1160px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -221,7 +216,7 @@
 
   h2 {
     font-family: 'Caveat', cursive;
-    font-size: clamp(40px, 5vw, 70px);
+    font-size: clamp(40px, 6vw, 80px);
     font-weight: 500;
     line-height: 1;
     margin-bottom: 40px;
@@ -300,7 +295,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    max-width: 1160px;
+    max-width: 1200px;
     margin: 60px auto 0;
   }
 
@@ -343,9 +338,9 @@
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 280px);
+    grid-template-rows: repeat(2, 300px);
     gap: 20px;
-    max-width: 1160px;
+    max-width: 1400px;
     margin: 60px auto 0;
   }
 
@@ -415,7 +410,7 @@
 
   .quote-block blockquote {
     font-family: 'Caveat', cursive;
-    font-size: clamp(36px, 4.5vw, 60px);
+    font-size: clamp(36px, 5vw, 70px);
     font-weight: 500;
     line-height: 1.1;
     max-width: 800px;
@@ -435,7 +430,7 @@
   /* ===== STATS ===== */
   .stats {
     padding: 80px 60px;
-    max-width: 1160px;
+    max-width: 1000px;
     margin: 0 auto;
   }
 
@@ -549,16 +544,6 @@
   }
 
   /* ===== RESPONSIVE ===== */
-  @media (max-width: 1280px) {
-    body {
-      max-width: 100%;
-    }
-    
-    header {
-      max-width: 100%;
-    }
-  }
-
   @media (max-width: 900px) {
     header { padding: 15px 25px; }
     nav ul { gap: 20px; }
@@ -568,7 +553,7 @@
     .card-divider { grid-template-columns: 1fr; }
     .card-divider div:first-child { border-right: none; border-bottom: 1px solid var(--line); }
     .card-divider div { padding: 25px; }
-    .content-section, .values, .gallery, .quote-block, .cta-section, .stats { padding: 80px 25px; }
+    .content-section, .values, .gallery, .quote-block, .cta-section { padding: 80px 25px; }
     .story-grid { grid-template-columns: 1fr; gap: 40px; }
     .values-grid { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, 200px); }
@@ -691,8 +676,8 @@
 
 <!-- GALLERY -->
 <section class="gallery">
-  <div class="section-label reveal" style="max-width: 1160px; margin-left: auto; margin-right: auto;">Studio Gallery</div>
-  <h2 class="reveal" style="max-width: 1160px; margin-left: auto; margin-right: auto;">A glimpse <span>inside</span></h2>
+  <div class="section-label reveal">Studio Gallery</div>
+  <h2 class="reveal">A glimpse <span>inside</span></h2>
   
   <div class="gallery-grid">
     <div class="gallery-item reveal">

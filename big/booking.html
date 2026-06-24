@@ -29,14 +29,11 @@
 
   body {
     font-family: 'Playfair Display', serif;
-    background-color: #e8e4df;
+    background-color: var(--off-white);
     color: var(--ink);
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
-    max-width: 1280px;
-    margin: 0 auto;
-    box-shadow: 0 0 60px rgba(0,0,0,0.15);
   }
 
   body::before {
@@ -56,10 +53,8 @@
   header {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 100%;
-    max-width: 1280px;
     padding: 20px 60px;
     display: flex;
     justify-content: space-between;
@@ -162,7 +157,7 @@
 
   .card-title h1 {
     font-family: 'Caveat', cursive;
-    font-size: clamp(50px, 7vw, 90px);
+    font-size: clamp(50px, 8vw, 100px);
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -2px;
@@ -179,7 +174,7 @@
   /* ===== BOOKING FORM ===== */
   .booking-section {
     padding: 80px 60px 120px;
-    max-width: 1160px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
@@ -529,16 +524,6 @@
   }
 
   /* ===== RESPONSIVE ===== */
-  @media (max-width: 1280px) {
-    body {
-      max-width: 100%;
-    }
-    
-    header {
-      max-width: 100%;
-    }
-  }
-
   @media (max-width: 900px) {
     header { padding: 15px 25px; }
     nav ul { gap: 20px; }
