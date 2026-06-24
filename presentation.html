@@ -49,13 +49,8 @@
   }
 
   /* ===== TYPOGRAPHY ===== */
-  .script {
-    font-family: 'Caveat', cursive;
-  }
-
-  .serif {
-    font-family: 'Playfair Display', serif;
-  }
+  .script { font-family: 'Caveat', cursive; }
+  .serif { font-family: 'Playfair Display', serif; }
 
   /* ===== HEADER ===== */
   .case-header {
@@ -101,21 +96,9 @@
     text-transform: uppercase;
   }
 
-  .meta-item {
-    text-align: center;
-  }
-
-  .meta-label {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--gray);
-    font-size: 10px;
-  }
-
-  .meta-value {
-    font-weight: 600;
-    color: var(--ink);
-  }
+  .meta-item { text-align: center; }
+  .meta-label { display: block; margin-bottom: 8px; color: var(--gray); font-size: 10px; }
+  .meta-value { font-weight: 600; color: var(--ink); }
 
   /* ===== SECTIONS ===== */
   .case-section {
@@ -124,9 +107,7 @@
     margin: 0 auto;
   }
 
-  .section-header {
-    margin-bottom: 80px;
-  }
+  .section-header { margin-bottom: 80px; }
 
   .section-number {
     font-family: 'Caveat', cursive;
@@ -240,9 +221,7 @@
     background: var(--ink);
   }
 
-  .vpc-list {
-    list-style: none;
-  }
+  .vpc-list { list-style: none; }
 
   .vpc-list li {
     padding: 12px 0;
@@ -253,9 +232,7 @@
     border-bottom: 1px dashed rgba(26, 26, 26, 0.1);
   }
 
-  .vpc-list li:last-child {
-    border-bottom: none;
-  }
+  .vpc-list li:last-child { border-bottom: none; }
 
   .vpc-list li::before {
     content: '•';
@@ -327,14 +304,10 @@
     color: var(--gray);
   }
 
-  .competitor-body {
-    padding: 30px;
-  }
+  .competitor-body { padding: 30px; }
 
   .competitor-strengths,
-  .competitor-weaknesses {
-    margin-bottom: 25px;
-  }
+  .competitor-weaknesses { margin-bottom: 25px; }
 
   .competitor-label {
     font-size: 11px;
@@ -344,17 +317,10 @@
     font-weight: 600;
   }
 
-  .competitor-strengths .competitor-label {
-    color: #4a9e4a;
-  }
+  .competitor-strengths .competitor-label { color: #4a9e4a; }
+  .competitor-weaknesses .competitor-label { color: var(--red); }
 
-  .competitor-weaknesses .competitor-label {
-    color: var(--red);
-  }
-
-  .competitor-list {
-    list-style: none;
-  }
+  .competitor-list { list-style: none; }
 
   .competitor-list li {
     padding: 8px 0;
@@ -396,9 +362,7 @@
     cursor: pointer;
   }
 
-  .color-item:last-child {
-    border-right: none;
-  }
+  .color-item:last-child { border-right: none; }
 
   .color-item:hover {
     transform: scale(1.05);
@@ -427,7 +391,6 @@
     line-height: 1.5;
   }
 
-  /* Color backgrounds */
   .color-off-white { background: var(--off-white); color: var(--ink); }
   .color-paper { background: var(--paper); color: var(--ink); }
   .color-ink { background: var(--ink); color: var(--off-white); }
@@ -441,9 +404,7 @@
     border-bottom: 1px solid var(--line);
   }
 
-  .type-showcase {
-    margin-top: 60px;
-  }
+  .type-showcase { margin-top: 60px; }
 
   .type-family {
     margin-bottom: 80px;
@@ -452,9 +413,7 @@
     background: var(--off-white);
   }
 
-  .type-family:last-child {
-    margin-bottom: 0;
-  }
+  .type-family:last-child { margin-bottom: 0; }
 
   .type-family-header {
     display: flex;
@@ -495,9 +454,7 @@
     color: var(--gray);
   }
 
-  .type-sample-text {
-    line-height: 1.4;
-  }
+  .type-sample-text { line-height: 1.4; }
 
   /* ===== PROCESS ===== */
   .process-timeline {
@@ -525,13 +482,8 @@
     align-items: center;
   }
 
-  .process-step:nth-child(even) {
-    direction: rtl;
-  }
-
-  .process-step:nth-child(even) > * {
-    direction: ltr;
-  }
+  .process-step:nth-child(even) { direction: rtl; }
+  .process-step:nth-child(even) > * { direction: ltr; }
 
   .process-number {
     font-family: 'Caveat', cursive;
@@ -545,9 +497,7 @@
     z-index: -1;
   }
 
-  .process-content {
-    padding: 40px;
-  }
+  .process-content { padding: 40px; }
 
   .process-title {
     font-family: 'Playfair Display', serif;
@@ -561,10 +511,230 @@
     color: var(--gray);
   }
 
-  /* ===== FINAL DESIGN ===== */
-  .final-showcase {
+  /* ===== TOOLS USED (НОВАЯ СЕКЦИЯ) ===== */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     margin-top: 60px;
   }
+
+  .tool-card {
+    padding: 50px 35px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    position: relative;
+    transition: all 0.4s;
+    overflow: hidden;
+  }
+
+  .tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+  }
+
+  .tool-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .tool-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    background: var(--off-white);
+  }
+
+  .tool-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    background: var(--off-white);
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--red);
+    transition: all 0.4s;
+  }
+
+  .tool-card:hover .tool-icon {
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+  }
+
+  .tool-category {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+
+  .tool-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  .tool-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--gray);
+    margin-bottom: 20px;
+  }
+
+  .tool-usage {
+    padding-top: 20px;
+    border-top: 1px dashed rgba(26, 26, 26, 0.15);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .tool-usage-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  /* Дополнительные инструменты */
+  .tools-secondary {
+    margin-top: 80px;
+    padding: 60px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+  }
+
+  .tools-secondary-title {
+    font-family: 'Caveat', cursive;
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: var(--red);
+    text-align: center;
+  }
+
+  .tools-secondary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .tool-mini {
+    text-align: center;
+    padding: 30px 20px;
+    border: 1px solid var(--line);
+    background: var(--off-white);
+    transition: all 0.3s;
+  }
+
+  .tool-mini:hover {
+    border-color: var(--red);
+    transform: translateY(-3px);
+  }
+
+  .tool-mini-icon {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: var(--red);
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  .tool-mini-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .tool-mini-role {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  /* Workflow diagram */
+  .workflow {
+    margin-top: 80px;
+    padding: 60px 40px;
+    border: 1px solid var(--line);
+    background: var(--off-white);
+  }
+
+  .workflow-title {
+    font-family: 'Caveat', cursive;
+    font-size: 42px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--ink);
+  }
+
+  .workflow-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .workflow-step {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+  }
+
+  .workflow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    color: var(--red);
+  }
+
+  .workflow-step-number {
+    font-family: 'Caveat', cursive;
+    font-size: 48px;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .workflow-step-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .workflow-step-tool {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  /* ===== FINAL DESIGN ===== */
+  .final-showcase { margin-top: 60px; }
 
   .mockup-frame {
     border: 1px solid var(--line);
@@ -581,9 +751,7 @@
     transition: filter 0.6s;
   }
 
-  .mockup-frame:hover img {
-    filter: grayscale(0%);
-  }
+  .mockup-frame:hover img { filter: grayscale(0%); }
 
   .mockup-caption {
     padding: 30px;
@@ -643,72 +811,52 @@
     transition: width 0.4s;
   }
 
-  .footer-links a:hover::after {
-    width: 100%;
-  }
+  .footer-links a:hover::after { width: 100%; }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 1200px) {
     .goals-grid,
-    .competitors-grid {
-      grid-template-columns: 1fr;
+    .competitors-grid,
+    .tools-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
     
-    .vpc-grid {
-      grid-template-columns: 1fr;
-    }
+    .vpc-grid { grid-template-columns: 1fr; }
+    .tools-secondary-grid { grid-template-columns: repeat(2, 1fr); }
     
-    .colors-showcase {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    .colors-showcase { grid-template-columns: repeat(3, 1fr); }
+    .color-item:nth-child(3) { border-right: none; }
     
-    .color-item:nth-child(3) {
-      border-right: none;
-    }
+    .workflow-step:not(:last-child)::after { display: none; }
   }
 
   @media (max-width: 900px) {
-    .case-header {
-      padding: 80px 25px 60px;
-    }
-    
-    .case-section {
-      padding: 80px 25px;
-    }
-    
-    .vpc-container {
-      padding: 40px 25px;
-    }
-    
-    .type-samples {
-      grid-template-columns: 1fr;
-    }
+    .case-header { padding: 80px 25px 60px; }
+    .case-section { padding: 80px 25px; }
+    .vpc-container { padding: 40px 25px; }
+    .tools-secondary, .workflow { padding: 40px 25px; }
+    .type-samples { grid-template-columns: 1fr; }
     
     .process-step {
       grid-template-columns: 1fr;
       gap: 40px;
     }
     
-    .process-step:nth-child(even) {
-      direction: ltr;
-    }
+    .process-step:nth-child(even) { direction: ltr; }
+    .process-timeline::before { left: 20px; }
     
-    .process-timeline::before {
-      left: 20px;
-    }
+    .tools-grid { grid-template-columns: 1fr; }
+    .tools-secondary-grid { grid-template-columns: 1fr; }
     
-    .colors-showcase {
-      grid-template-columns: 1fr 1fr;
-    }
-    
-    .color-item:nth-child(2) {
-      border-right: none;
-    }
+    .colors-showcase { grid-template-columns: 1fr 1fr; }
+    .color-item:nth-child(2) { border-right: none; }
     
     .footer-links {
       flex-direction: column;
       gap: 20px;
     }
+    
+    .workflow-steps { flex-direction: column; }
   }
 
   /* ===== ANIMATIONS ===== */
@@ -802,11 +950,9 @@
   
   <div class="vpc-container reveal">
     <div class="vpc-grid">
-      <!-- Customer Profile -->
       <div class="vpc-column">
         <div class="vpc-block">
           <h3 class="vpc-block-title">Customer Profile</h3>
-          
           <div class="vpc-jobs">
             <h4 class="competitor-label" style="margin-bottom: 15px; color: var(--ink);">Jobs (Что пытается достичь)</h4>
             <ul class="vpc-list">
@@ -842,11 +988,9 @@
         </div>
       </div>
       
-      <!-- Value Map -->
       <div class="vpc-column">
         <div class="vpc-block">
           <h3 class="vpc-block-title">Value Map</h3>
-          
           <div class="vpc-products">
             <h4 class="competitor-label" style="margin-bottom: 15px; color: var(--ink);">Products & Services</h4>
             <ul class="vpc-list">
@@ -883,7 +1027,6 @@
       </div>
     </div>
     
-    <!-- Value Proposition Center -->
     <div class="vpc-center">
       <div class="vpc-value-prop">
         <h3>Value Proposition</h3>
@@ -906,7 +1049,6 @@
   </div>
   
   <div class="competitors-grid">
-    <!-- Competitor 1 -->
     <div class="competitor-card reveal">
       <div class="competitor-header">
         <h3 class="competitor-name">The Yoga Studio</h3>
@@ -934,7 +1076,6 @@
       </div>
     </div>
     
-    <!-- Competitor 2 -->
     <div class="competitor-card reveal">
       <div class="competitor-header">
         <h3 class="competitor-name">Mindful Space</h3>
@@ -962,7 +1103,6 @@
       </div>
     </div>
     
-    <!-- Competitor 3 -->
     <div class="competitor-card reveal">
       <div class="competitor-header">
         <h3 class="competitor-name">Yoga Apps</h3>
@@ -991,7 +1131,6 @@
     </div>
   </div>
   
-  <!-- Key Insights -->
   <div style="margin-top: 60px; padding: 60px; border: 1px solid var(--line); background: var(--paper);" class="reveal">
     <h3 style="font-family: 'Caveat', cursive; font-size: 48px; margin-bottom: 30px; color: var(--red);">Key Insights</h3>
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
@@ -1049,7 +1188,6 @@
     </div>
   </div>
   
-  <!-- Color Psychology -->
   <div style="margin-top: 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;" class="reveal">
     <div style="padding: 40px; border: 1px solid var(--line); background: var(--paper);">
       <h4 style="font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 15px;">Warm Neutrals</h4>
@@ -1083,7 +1221,6 @@
   </div>
   
   <div class="type-showcase reveal">
-    <!-- Caveat -->
     <div class="type-family">
       <div class="type-family-header">
         <h3 class="type-family-name" style="font-family: 'Caveat', cursive;">Caveat</h3>
@@ -1122,7 +1259,6 @@
       </div>
     </div>
     
-    <!-- Playfair Display -->
     <div class="type-family">
       <div class="type-family-header">
         <h3 class="type-family-name" style="font-family: 'Playfair Display', serif;">Playfair Display</h3>
@@ -1162,7 +1298,6 @@
     </div>
   </div>
   
-  <!-- Typography Principles -->
   <div style="margin-top: 60px; padding: 60px; border: 1px solid var(--line); background: var(--off-white);" class="reveal">
     <h3 style="font-family: 'Caveat', cursive; font-size: 48px; margin-bottom: 40px; color: var(--red);">Typography Principles</h3>
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
@@ -1262,10 +1397,163 @@
   </div>
 </section>
 
-<!-- FINAL DESIGN SHOWCASE -->
-<section class="case-section" style="background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+<!-- ============================================ -->
+<!-- НОВАЯ СЕКЦИЯ: TOOLS USED -->
+<!-- ============================================ -->
+<section class="case-section" style="background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); max-width: 100%; padding-left: 60px; padding-right: 60px;">
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <div class="section-header reveal">
+      <div class="section-number">07</div>
+      <h2 class="section-title">Tools & Technologies</h2>
+      <p class="section-description">
+        Проект реализован с использованием современного стека инструментов — от проектирования интерфейсов до финальной вёрстки и деплоя.
+      </p>
+    </div>
+    
+    <!-- Основные инструменты -->
+    <div class="tools-grid reveal">
+      <!-- FIGMA -->
+      <div class="tool-card">
+        <div class="tool-icon">Fg</div>
+        <div class="tool-category">Design Tool</div>
+        <h3 class="tool-name">Figma</h3>
+        <p class="tool-description">
+          Основной инструмент для UI/UX дизайна. Создание дизайн-системы, компонентной библиотеки и интерактивного прототипа.
+        </p>
+        <div class="tool-usage">
+          <div class="tool-usage-label">Использование</div>
+          Wireframes · UI Design · Design System · Prototype · Auto Layout · Variables
+        </div>
+      </div>
+      
+      <!-- HTML -->
+      <div class="tool-card">
+        <div class="tool-icon">&lt;/&gt;</div>
+        <div class="tool-category">Markup Language</div>
+        <h3 class="tool-name">HTML5</h3>
+        <p class="tool-description">
+          Семантическая разметка всех страниц сайта с использованием современных тегов и доступной структуры.
+        </p>
+        <div class="tool-usage">
+          <div class="tool-usage-label">Использование</div>
+          Semantic Tags · Forms · Accessibility · SEO Structure
+        </div>
+      </div>
+      
+      <!-- CSS -->
+      <div class="tool-card">
+        <div class="tool-icon">#</div>
+        <div class="tool-category">Styling</div>
+        <h3 class="tool-name">CSS3</h3>
+        <p class="tool-description">
+          Стилизация интерфейса с использованием CSS-переменных, Grid, Flexbox и адаптивных медиа-запросов.
+        </p>
+        <div class="tool-usage">
+          <div class="tool-usage-label">Использование</div>
+          CSS Variables · Grid · Flexbox · Animations · Responsive
+        </div>
+      </div>
+      
+      <!-- JS -->
+      <div class="tool-card">
+        <div class="tool-icon">JS</div>
+        <div class="tool-category">Scripting</div>
+        <h3 class="tool-name">JavaScript</h3>
+        <p class="tool-description">
+          Интерактивность сайта: анимации при скролле, обработка форм, валидация данных и динамические эффекты.
+        </p>
+        <div class="tool-usage">
+          <div class="tool-usage-label">Использование</div>
+          IntersectionObserver · Form Validation · Parallax · Smooth Scroll
+        </div>
+      </div>
+    </div>
+    
+    <!-- Дополнительные инструменты -->
+    <div class="tools-secondary reveal">
+      <h3 class="tools-secondary-title">Supporting Tools</h3>
+      <div class="tools-secondary-grid">
+        <div class="tool-mini">
+          <div class="tool-mini-icon">Gf</div>
+          <div class="tool-mini-name">Google Fonts</div>
+          <div class="tool-mini-role">Typography</div>
+        </div>
+        <div class="tool-mini">
+          <div class="tool-mini-icon">Us</div>
+          <div class="tool-mini-name">Unsplash</div>
+          <div class="tool-mini-role">Photography</div>
+        </div>
+        <div class="tool-mini">
+          <div class="tool-mini-icon">VS</div>
+          <div class="tool-mini-name">VS Code</div>
+          <div class="tool-mini-role">Code Editor</div>
+        </div>
+        <div class="tool-mini">
+          <div class="tool-mini-icon">Gh</div>
+          <div class="tool-mini-name">GitHub</div>
+          <div class="tool-mini-role">Version Control</div>
+        </div>
+        <div class="tool-mini">
+          <div class="tool-mini-icon">Nt</div>
+          <div class="tool-mini-name">Netlify</div>
+          <div class="tool-mini-role">Hosting</div>
+        </div>
+        <div class="tool-mini">
+          <div class="tool-mini-icon">Ls</div>
+          <div class="tool-mini-name">Live Server</div>
+          <div class="tool-mini-role">Local Dev</div>
+        </div>
+        <div class="tool-mini">
+          <div class="tool-mini-icon">HtD</div>
+          <div class="tool-mini-name">html.to.design</div>
+          <div class="tool-mini-role">Figma Import</div>
+        </div>
+        <div class="tool-mini">
+          <div class="tool-mini-icon">Ch</div>
+          <div class="tool-mini-name">Chrome DevTools</div>
+          <div class="tool-mini-role">Debugging</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Workflow diagram -->
+    <div class="workflow reveal">
+      <h3 class="workflow-title">Project Workflow</h3>
+      <div class="workflow-steps">
+        <div class="workflow-step">
+          <div class="workflow-step-number">01</div>
+          <div class="workflow-step-name">Research</div>
+          <div class="workflow-step-tool">Figma · Notion</div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-step-number">02</div>
+          <div class="workflow-step-name">Design</div>
+          <div class="workflow-step-tool">Figma</div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-step-number">03</div>
+          <div class="workflow-step-name">Prototype</div>
+          <div class="workflow-step-tool">Figma · Proto</div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-step-number">04</div>
+          <div class="workflow-step-name">Develop</div>
+          <div class="workflow-step-tool">VS Code · HTML/CSS/JS</div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-step-number">05</div>
+          <div class="workflow-step-name">Deploy</div>
+          <div class="workflow-step-tool">GitHub · Netlify</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL DESIGN -->
+<section class="case-section">
   <div class="section-header reveal">
-    <div class="section-number">07</div>
+    <div class="section-number">08</div>
     <h2 class="section-title">Final Design</h2>
     <p class="section-description">
       Готовый адаптивный сайт с 5 основными страницами и полной функциональностью записи на занятия.
@@ -1299,7 +1587,7 @@
 <!-- RESULTS -->
 <section class="case-section">
   <div class="section-header reveal">
-    <div class="section-number">08</div>
+    <div class="section-number">09</div>
     <h2 class="section-title">Results & Impact</h2>
     <p class="section-description">
       Количественные и качественные результаты после запуска сайта.
@@ -1341,7 +1629,6 @@
 </footer>
 
 <script>
-  // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
